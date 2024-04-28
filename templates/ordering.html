@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load static %}
+
+  
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #0a0a0a;
+    }
+
+    .head_text {
+        color: rgb(236, 140, 240);
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #12161a;
+    }
+</style>
+
+<center>
+    <div class="card text-bg-dark  mb-4">
+        <div class="card-body ">
+          <!-- we use the crsf token  below for security -->
+            
+            <h3 class="card-title"> &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-bag-check-fill" >
+                <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+              </svg> &nbsp;إتمام الشراء </h3>
+            <hr>
+            <form method="post" action="{% url 'ordering' product.pk %}" >
+              {% csrf_token %} 
+              <div class="form-group">
+                <h4>{{ product.title }}</h4>
+                <input type="hidden" name="product" value="{{ product.title }}">
+                <hr>
+                <div class="col-lg-6" >
+                    <label for="name"  class="form-label">الاسم</label>
+                    <input  type="text"  name="name"  aria-label="First name" class="form-control mb-3" placeholder="الاسم">
+                </div>
+                <div class="col-lg-6 " >
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="text"  name="phone"   required placeholder="يرجى التأكد من رقم الهاتف">  
+                </div>
+    
+                <div class="col-lg-6 " >
+                    <label for="name"  class="form-label">العنوان</label>
+                    <input  type="text"  name="adress"   class="form-control mb-3" placeholder="الولاية ">
+                    <input  type="text"  name="adress1"  class="form-control mb-3" placeholder="البلدية">
+                </div>
+    
+                <div class="col-lg-6" > 
+                    <h5> أقل  كمية&nbsp;{{ product.min_order }}</h5>         
+                    <label for="message" class="form-label">الكمية</label>
+                    <textarea class="form-control mb-3" name="amount" id="quantity"  rows="4"></textarea>
+                    
+                </div>
+    
+                <input type="submit" class="btn btn-primary" value="تاكيد">
+
+              </div>
+            </form>
+     
+                <hr>
+      
+            <a href="{% url 'home' %}" class="btn btn-dark"> &#8592;  رجوع </a>
+        </div>
+    </div>
+</center>
+
+
+
+
+
+{% endblock %}

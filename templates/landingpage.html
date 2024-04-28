@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #0a0a0a;
+    }
+
+    .head_text {
+        color: rgb(236, 140, 240);
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #12161a;
+    }
+</style>
+
+{% load static %}
+<style>
+    body {
+    
+        background-image: linear-gradient(to right , rgb(86, 5, 192),rgb(223, 67, 238));
+    }
+</style>
+<style>
+    /* Use a relative font size for the body */
+    body {
+      font-size: 16px;
+    }
+
+    /* Use a flex container for the two divs */
+    .container {
+      display: flex;
+      flex-wrap: wrap; /* Allow the divs to wrap on smaller screens */
+    }
+
+    /* Use relative units for the width and margin of the divs */
+    .box {
+      width: 45%;
+      margin: 2.5%;
+      padding: 20px;
+      float: right;
+      right: 77px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(246, 241, 241, 0.1);
+      background-color: rgba(245, 240, 245, 0.2); /* Use a low opacity value */
+      backdrop-filter: blur(4px); /* Use a high blur value */
+    }
+   
+    /* Use a media query to change the layout for smaller screens */
+    @media (max-width: 600px) {
+      .box {
+        width: 90%; /* Make the divs take up the full width */
+        margin: 5%; /* Increase the margin */
+      }
+    }
+    h1{
+        color: azure;
+        font-family: cursive;
+     
+    }
+    b{
+        color: rgb(13, 14, 14);
+        font-weight: bold;
+        font-size: large;
+    }
+    h6{
+        font-family: "VT323", monospace;
+        color: #64e40f;
+        background-color: black !important;
+        border-radius: 5px;
+        margin: 5px;
+    }
+    h2{
+        text-align : center;
+    }
+  
+  
+</style>
+<div class="box">
+    <h2>&#128515;التوصيل 58  ولاية </h2>
+    <img  src="https://i.pinimg.com/originals/c4/9a/20/c49a207e0f89c9290d98fd43a87a8cb0.gif"  class="img-fluid rounded-start" >
+</div>
+<div class="box">
+    <h2>الدفع عند الإستلام</h2>
+    <img  src="https://i.pinimg.com/564x/6c/b4/d0/6cb4d04394a2c79ffde5ac3e253fb6af.jpg"  class="img-fluid rounded-start" >
+</div>
+
+<div class="box">
+    <h2>أفضل  الأسعار</h2>
+    <img  src="https://i.pinimg.com/564x/40/78/00/407800b4118bd8110e4ba3b035331e73.jpg"  class="img-fluid rounded-start" >
+</div>
+
+<center>
+    <div class="box">
+        <img  src="https://i.pinimg.com/564x/a2/b0/cb/a2b0cb7b7e58dfe3f2b99938fc02faa5.jpg"  class="img-fluid rounded-start" >
+        <h2>سياسة الاسترجاع</h2>
+    </div>
+</center>
+<center>
+    <div class="box">
+        <h2>البيع  بالجملة و التجزئة</h2>
+        <img  src="https://i.pinimg.com/736x/2c/1c/46/2c1c468da203fda51d4f7de217246954.jpg"  class="img-fluid rounded-start" >
+    </div>
+</center>
+<center>
+    <div class="box">
+        <h2> سعر و جودة و ضمان </h2>
+        <img  src="https://i.pinimg.com/564x/22/49/fb/2249fb8ed326da7ee76021557783b701.jpg"  class="img-fluid rounded-start" >
+    </div>
+</center>
+<center>
+    <div class="box">
+        <b>شكرا على إختيار </b>
+        <img src="{% static 'images/logot.png'%}"  style="max-height: 60px; max-width: 60px;"  alt="home" />
+        <b>Hani Store</b>
+    </div>
+</center>
+{% endblock %} 
